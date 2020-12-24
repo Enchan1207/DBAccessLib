@@ -1,11 +1,14 @@
 #
 # SQLite3アクセサ
 #
+from .AccInterface import _DBAccessorInterface
+
 import sqlite3
 
-class Accessor():
+class Accessor(_DBAccessorInterface):
 
     def __init__(self, dbPath):
+        super().__init__()
         self.connection = sqlite3.connect(dbPath)
         self.cursor = self.connection.cursor()
         self.isConnected = True

@@ -1,12 +1,14 @@
 #
 # MySQLアクセサ
 #
+from .AccInterface import _DBAccessorInterface
+
 from urllib.parse import urlparse
 import mysql.connector as MySQL
-class Accessor():
+
+class Accessor(_DBAccessorInterface):
     def __init__(self, databaseURL):
-        self.connection = None
-        self.cursor = None
+        super().__init__()
 
         # 接続
         url = urlparse(databaseURL)
