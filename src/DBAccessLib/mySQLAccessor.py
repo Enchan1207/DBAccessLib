@@ -1,9 +1,8 @@
 #
-# DB接続ユーティリティ
+# MySQLアクセサ
 #
 from urllib.parse import urlparse
 import mysql.connector as MySQL
-
 class Accessor():
     def __init__(self, databaseURL):
         self.connection = None
@@ -24,11 +23,13 @@ class Accessor():
         # 接続できたらcursorを作成
         if self.isConnected:
             self.cursor = self.connection.cursor(buffered = True)
+        else:
+            print("\033[31mERROR:\033[0mcouldn't establish connection.")
 
     # SQL実行
-    def exec(self, sql, param = None):
+    def exec(self, sql, param = None) -> bool:
         if not self.isConnected:
-            return -1
+            return False
 
         # paramがタプルならexecute、リストならexecutemany
         paramType = type(param)
@@ -40,12 +41,21 @@ class Accessor():
             self.cursor.execute(sql)
 
         self.connection.commit()
+        return True
 
     # 接続切断
     def disConnection(self):
         self.cursor.close()
         self.connection.close()
+        self.isConnected = False
 
     # フェッチ
-    def fetch(self):
+    def fetchall(self):
         return self.cursor.fetchall()
+
+    def fetchone(self):
+        return self.cursor.fetchone()
+
+    # iterable?
+    def fetchmany(self, size=1):
+        return self.cursor.fetchmany(size)

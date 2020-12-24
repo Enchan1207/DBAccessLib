@@ -1,4 +1,5 @@
 #
 # DB接続ユーティリティ
 #
-from .mySQLAccessor import Accessor
+from .mysqlAccessor import Accessor
+from .sqliteAccessor import Accessor
