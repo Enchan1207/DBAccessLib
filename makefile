@@ -2,5 +2,5 @@
 .PHONY: cleanup
 
 cleanup:
-	yes | pip uninstall CANClientLib > /dev/null
+	yes | pip uninstall DBAccessLib > /dev/null
 	pip install -e . > /dev/null
