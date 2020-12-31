@@ -1,7 +1,7 @@
 #
 # SQLite3アクセサ
 #
-from src.DBAccessLib.AccInterface import _DBAccessorInterface
+from .AccInterface import _DBAccessorInterface
 
 import sqlite3
 

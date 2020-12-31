@@ -3,4 +3,4 @@
 
 cleanup:
 	yes | pip uninstall DBAccessLib > /dev/null
-	pip install -e . > /dev/null
+	pip install git+https://github.com/Enchan1207/DBAccessLib

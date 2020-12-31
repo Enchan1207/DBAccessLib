@@ -1,7 +1,7 @@
 #
 # MySQLアクセサ
 #
-from src.DBAccessLib.AccInterface import _DBAccessorInterface
+from .AccInterface import _DBAccessorInterface
 
 from urllib.parse import urlparse
 import mysql.connector as MySQL
