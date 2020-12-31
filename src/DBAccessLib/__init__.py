@@ -1,6 +1,6 @@
 #
 # DB接続ユーティリティ
 #
-from .mysqlAccessor import Accessor
-from .sqliteAccessor import Accessor
-from .AccInterface import _DBAccessorInterface
+from src.DBAccessLib.mysqlAccessor import Accessor
+from src.DBAccessLib.sqliteAccessor import Accessor
+from src.DBAccessLib.AccInterface import _DBAccessorInterface
