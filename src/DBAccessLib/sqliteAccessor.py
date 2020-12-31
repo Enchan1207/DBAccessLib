@@ -36,6 +36,10 @@ class Accessor(_DBAccessorInterface):
         self.connection.close()
         self.isConnected = False
 
+    # Prepared-Statementでパラメータの置換に使う文字列を返す
+    def getReplacer(self) -> str:
+        return "?"
+
     # フェッチ
     def fetchall(self):
         return self.cursor.fetchall()

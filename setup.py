@@ -6,7 +6,7 @@ import setuptools, os
 
 setuptools.setup(
     name="DBAccessLib",
-    version="0.1.0",
+    version="0.2.0",
     license="MIT Licence",
     description="Database access interface library",
     author="Enchan1207",
